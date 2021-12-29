@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* Style the header */
+        header {
+            background-color: rgb(37, 175, 152);
+            background-image: url("Library.5jpg.png");
+            background-repeat: no-repeat;
+            background-position: 50%;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+            height: 190px;
+        }
+        /* Create two columns/boxes that floats next to each other */
+        nav {
+            float: left;
+            width: 30%;
+            height: 350px;
+            /* only for demonstration, should be removed */
+            background: #ccc;
+            padding: 20px;
+            /* background-image: url("Library.jpg"); */
+        }
+        /* Style the list inside the menu */
+        nav ul {
+            text-align: center;
+            list-style-type: none;
+            padding: 0;
+            font-size: larger;
+        }
+        article {
+            float: left;
+            padding: 20px;
+            width: 70%;
+            background-color: #f1f1f1;
+            height: 350px;
+            /* only for demonstration, should be removed */
+        }
+        /* Clear floats after the columns */
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* Style the footer */
+        footer {
+            background-color: rgb(37, 175, 152);
+            ;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+        @media (max-width: 600px) {
+            nav,
+            article {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+.glow-on-hover:active {
+    color: #000
+}
+.glow-on-hover:active:after {
+    background: transparent;
+}
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+        body{
+  font-family: 'Lato', sans-serif;
+}
+.btn {
+  border: none;
+  font-family: 'Lato';
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 25px 80px;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+.btn:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* Pseudo elements for icons */
+.btn:before {
+  font-family: 'FontAwesome';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+/* Icon separator */
+.btn-sep {
+  padding: 25px 60px 25px 120px;
+}
+.btn-sep:before {
+  background: rgba(0,0,0,0.15);
+}
+/* Button 1 */
+.btn-1 {
+  background: #3498db;
+  color: #fff;
+}
+.btn-1:hover {
+  background: #2980b9;
+}
+.btn-1:active {
+  background: #2980b9;
+  top: 2px;
+}
+.btn-1:before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%;
+  width: 60px;
+}
+/* Button 2 */
+.btn-2 {
+  background: #2ecc71;
+  color: #fff;
+}
+.btn-2:hover {
+  background: #27ae60;
+}
+.btn-2:active {
+  background: #27ae60;
+  top: 2px;
+}
+.btn-2:before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%;
+  width: 60px;
+}
+/* Button 3 */
+.btn-3 {
+  background: #e74c3c;
+  color: #fff;
+}
+.btn-3:hover {
+  background: #c0392b;
+}
+.btn-3:active {
+  background: #c0392b;
+  top: 2px;
+}
+.btn-3:before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%;
+  width: 60px;
+}
+/* Button 3 */
+.btn-4 {
+  background: #34495e;
+  color: #fff;
+}
+.btn-4:hover {
+  background: #2c3e50;
+}
+.btn-4:active {
+  background: #2c3e50;
+  top: 2px;
+}
+.btn-4:before {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%;
+  width: 60px;
+}
+/* Icons */
+.icon-cart:before {
+  content: "\f07a";
+}
+.icon-heart:before {
+  content: "\f55a";
+}
+.icon-info:before {
+  content: "\f05a";
+}
+.icon-send:before {
+  content: "\f1d8";
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h2> </h2>
+    </header>
+    <section>
+        <nav>
+            <ul><br><br>
+                <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+                <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+                <li><a href="UpdateBook.html"><button class="glow-on-hover">UPDATE</button></a></li><br>
+                <li><a href="index.html"><button class="glow-on-hover">LOGOUT</button></a></li>
+                <!-- <li><a href="UpdateBook.html"><button class="block">UPDATE BOOKS</button></a></li><br>
+                <li><a href="Library.html"><button class="block">LOGOUT</button></a></li> -->
+            </ul>
+        </nav>
+        <img src="book-22.gif" alt="Computer man" width="933" height="350.1">
+        <!-- <article>
+            <-- <h1>E LIBRARY</h1> -->
+        <!-- <p>A World of Learning, always by your side</p>
+    <p>E Library is a comprshensive digit learning solution to empower learners across all disciplines.
+        They can now access their course books as per their convenience, from anywhere, on any device.</p> -->
+        </article>
+    </section>
+    <footer>
+        <div class="col-md-6">
+            <p class="pt-2" style="font-family: tahoma, arial, helvetica, sans-serif;     font-size: 12px;">
+                <!-- Copyright © 2021 Kgisl global software solution. Ltd Registered Office: 365 KGiSL Campus, Thudiyalur Rd, Saravanampatti, Coimbatore, Tamil Nadu 641035 CIN: U72200TZ1994PTC005317 | Phone:  0422 441 9999, Email: gss-sales@kgisl.com   -->
+                Copyright © 2021
+            </p>
+        </div>
+    </footer>
+</body>
+</body>
+</html>

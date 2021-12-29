@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Book</title>
+    <script src="Lms.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* Style the header */
+        header {
+            background-color: rgb(37, 175, 152);
+            background-image: url("Library.5jpg.png");
+            background-repeat: no-repeat;
+            background-position: 50%;
+            height: 190px;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+        /* Create two columns/boxes that floats next to each other */
+        nav {
+            float: left;
+            width: 30%;
+            height: 350px;
+            /* only for demonstration, should be removed */
+            background: #ccc;
+            padding: 20px;
+        }
+        /* Style the list inside the menu */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        article {
+            float: left;
+            padding: 20px;
+            width: 70%;
+            background-color: #f1f1f1;
+            height: 350px;
+            /* only for demonstration, should be removed */
+        }
+        /* Clear floats after the columns */
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* Style the footer */
+        footer {
+            background-color: rgb(37, 175, 152);
+            ;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+        @media (max-width: 600px) {
+            nav,article {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+.glow-on-hover:active {
+    color: #000
+}
+.glow-on-hover:active:after {
+    background: transparent;
+}
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+</style>
+</head>
+<body>
+    <header>
+      <h2> </h2>
+    </header>
+    <section>
+      <nav>
+        <ul>
+          <!-- <li><button onclick="getuserdetails()" class="golw-on-hover">SHOW BOOKS</button></li><br>
+          <li><a href="Library.html"><button class="glow-on-hover">LOGOUT</button></a></li> -->
+          <li><button onclick="getuserdetails()" class="glow-on-hover">SHOW BOOKS</button></li><br>
+                <!-- <div class="wrapper"><a href="#"><span>Hover Me!</span></a></div> -->
+                <!-- <li><a href="Add.html"><button class="glow-on-hover"><span>BOOK</span></button></a></li><br> -->
+                <li><a href="index.html"><button class="glow-on-hover">LOGOUT</button></a></li>
+        </ul>
+      </nav>
+      <article>
+        <Table border=".05" style="margin-left: auto; margin-right: auto;" >
+            <tr >
+                <th>ISBN</th>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Publisher Name</th>
+                <!-- <button onclick="LmsDAO.updateBook()">Edit</button>
+                <button onclick="LmsDAO.deleteBook()">Delete</button> -->
+            </tr>
+            <tbody id="userset" ></tbody>
+        </Table>
+      </article>
+    </section>
+    <footer>
+        <div class="col-md-6">
+            <p class="pt-2" style="font-family: tahoma, arial, helvetica, sans-serif;     font-size: 12px;">
+    <!-- Copyright © 2021 Kgisl global software solution. Ltd Registered Office: 365 KGiSL Campus, Thudiyalur Rd, Saravanampatti, Coimbatore, Tamil Nadu 641035 CIN: U72200TZ1994PTC005317 | Phone:  0422 441 9999, Email: gss-sales@kgisl.com   -->
+    Copyright © 2021
+            </p>
+         </div>
+    </footer>
+    </body>
+</html>
